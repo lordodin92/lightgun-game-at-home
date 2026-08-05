@@ -381,7 +381,8 @@ GameObject:
   - component: {fileID: 788820160}
   - component: {fileID: 788820159}
   - component: {fileID: 788820158}
-  - component: {fileID: 788820157}
+  - component: {fileID: 788820162}
+  - component: {fileID: 788820163}
   m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
@@ -389,24 +390,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &788820157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 788820156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f22a3f6924115249a9417517549fc20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MovingTarget
-  points:
-  - {fileID: 771827610}
-  - {fileID: 2092342908}
-  - {fileID: 1772098056}
-  speed: 1
-  delay: 1
 --- !u!65 &788820158
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -500,6 +483,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &788820162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788820156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744877db36b704d4eaacb6f9cd022266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResizeTarget
+  maxScale: {x: 5, y: 5, z: 5}
+  speed: 2
+  duration: 5
+--- !u!114 &788820163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788820156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f22a3f6924115249a9417517549fc20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovingTarget
+  points:
+  - {fileID: 771827610}
+  - {fileID: 2092342908}
+  - {fileID: 1772098056}
+  speed: 1
+  delay: 1
 --- !u!1 &1772098056
 GameObject:
   m_ObjectHideFlags: 0
