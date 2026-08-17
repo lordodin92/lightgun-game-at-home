@@ -382,7 +382,6 @@ GameObject:
   - component: {fileID: 788820159}
   - component: {fileID: 788820158}
   - component: {fileID: 788820162}
-  - component: {fileID: 788820163}
   m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
@@ -492,30 +491,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 788820156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 744877db36b704d4eaacb6f9cd022266, type: 3}
+  m_Script: {fileID: 11500000, guid: 6024eb72162480a4c83ff0cc90468b95, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ResizeTarget
-  maxScale: {x: 5, y: 5, z: 5}
-  speed: 2
-  duration: 5
---- !u!114 &788820163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 788820156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f22a3f6924115249a9417517549fc20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MovingTarget
-  points:
-  - {fileID: 771827610}
-  - {fileID: 2092342908}
-  - {fileID: 1772098056}
-  speed: 1
-  delay: 1
+  m_EditorClassIdentifier: Assembly-CSharp::RotatingTarget
+  rotationSpeed: 2
 --- !u!1 &1772098056
 GameObject:
   m_ObjectHideFlags: 0
