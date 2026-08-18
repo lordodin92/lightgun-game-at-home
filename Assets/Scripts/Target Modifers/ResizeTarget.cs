@@ -11,9 +11,11 @@ public class ResizeTarget : MonoBehaviour
 
     private bool repeatable = true;
 
+    public GameObject targetObject;
+
     IEnumerator Start ()
     {
-        minScale = transform.localScale;
+        minScale = targetObject.transform.localScale;
         
         while (repeatable)
         {
@@ -29,7 +31,7 @@ public class ResizeTarget : MonoBehaviour
         while (i < 1.0f)
         {
             i += Time.deltaTime * rate;
-            transform.localScale = Vector3.Lerp(a, b, i);
+            targetObject.transform.localScale = Vector3.Lerp(a, b, i);
             yield return null;
         }
     }

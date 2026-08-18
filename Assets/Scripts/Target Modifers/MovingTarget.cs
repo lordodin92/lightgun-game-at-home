@@ -3,6 +3,7 @@ using UnityEngine;
 public class MovingTarget : MonoBehaviour
 {
     public GameObject[] points;
+    public GameObject targetObject;
     int destPoint;
     public float speed;
     public float delay;
@@ -16,8 +17,8 @@ public class MovingTarget : MonoBehaviour
 
     void Update()
     {
-        this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, speed * Time.deltaTime);
-        if (this.gameObject.transform.position == targetPosition)
+        targetObject.transform.position = Vector3.MoveTowards(targetObject.transform.position, targetPosition, speed * Time.deltaTime);
+        if (targetObject.transform.position == targetPosition)
         {
             UpdateTarget();
         }
