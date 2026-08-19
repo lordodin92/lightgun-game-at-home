@@ -3,9 +3,10 @@ using UnityEngine;
 public class RotatingTarget : MonoBehaviour
 {
     public float rotationSpeed;
+    public GameObject targetObject;
 
     private void Update()
     {
-        this.gameObject.transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
+        targetObject.transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
     }
 }
