@@ -9,9 +9,12 @@ public class TargetScore : MonoBehaviour
     public float scoreDegradeTime;
     public float degradeDelay;
 
+    Spawner spawner;
+
     void Start()
     {
         targetScore = maximumPoints;
+        spawner = GetComponentInParent<Spawner>();
     }
 
     public void StartTimer()
@@ -31,6 +34,11 @@ public class TargetScore : MonoBehaviour
             yield return new WaitForSeconds(scoreDegradeTime);
             targetScore--;
         }
+    }
+
+    public void UpdateScore()
+    {
+        spawner.manager.overallScore += targetScore;
     }
 
 }

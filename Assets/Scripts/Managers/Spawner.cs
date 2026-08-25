@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
     public GameObject target;
     public GameObject gameManager;
 
-    GameManager manager;
+    public GameManager manager;
     TargetScore score;
 
     public bool hasTargetSpawned;

@@ -2,15 +2,24 @@ using UnityEngine;
 
 public class TargetDestroy : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    TargetScore score;
+    Spawner spawn;
+
     void Start()
     {
-        
+        score = GetComponent<TargetScore>();
+        spawn = GetComponentInParent<Spawner>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GetScore()
     {
-        
+        score.UpdateScore();
+        destoryTarget();
+    }
+
+    public void destoryTarget()
+    {
+        spawn.manager.hitScore += 1f;
+        Destroy(this.gameObject);
     }
 }
