@@ -418,7 +418,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   currentTimer: 0
   gameTimer: 60
-  timerText: {fileID: 0}
+  overallScore: 0
+  hitScore: 0
 --- !u!4 &480294887
 Transform:
   m_ObjectHideFlags: 0
@@ -587,10 +588,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 788820156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6024eb72162480a4c83ff0cc90468b95, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c7847a0e20b2b341948dea3884dceb9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RotatingTarget
-  rotationSpeed: 2
+  m_EditorClassIdentifier: Assembly-CSharp::TargetScore
+  maximumPoints: 10
+  minimumPoints: 5
+  targetScore: 10
+  scoreDegradeTime: 1
 --- !u!1 &1772098056
 GameObject:
   m_ObjectHideFlags: 0
