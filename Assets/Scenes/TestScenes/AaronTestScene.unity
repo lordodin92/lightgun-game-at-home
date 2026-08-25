@@ -595,6 +595,7 @@ MonoBehaviour:
   minimumPoints: 5
   targetScore: 10
   scoreDegradeTime: 1
+  degradeDelay: 5
 --- !u!1 &1772098056
 GameObject:
   m_ObjectHideFlags: 0
