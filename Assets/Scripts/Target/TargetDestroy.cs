@@ -20,6 +20,7 @@ public class TargetDestroy : MonoBehaviour
     public void destoryTarget()
     {
         spawn.manager.hitScore += 1f;
+        spawn.manager.UpdateHits();
         Destroy(this.gameObject);
     }
 }
