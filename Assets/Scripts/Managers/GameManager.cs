@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
     public float overallScore;
     public float hitScore;
 
-    //public TMP_Text timerText;
+    public TMP_Text timerText;
+    public TMP_Text overallScoreText;
+    public TMP_Text hitScoreText;
 
     void Start()
     {
@@ -20,18 +22,23 @@ public class GameManager : MonoBehaviour
     {
         timerValue = gameTimer;
         currentTimer = timerValue;
-        //timerText.text = currentTimer.ToString("0");
         gameTimer = timerValue;
 
         while (currentTimer > 0)
         {
             yield return new WaitForSeconds(1.0f);
             currentTimer--;
+            timerText.text = currentTimer.ToString("0");
         }
     }
 
-    public void ScoreCal()
+    public void UpdateScore()
     {
+        overallScoreText.text = overallScore.ToString("0");
+    }
 
+    public void UpdateHits()
+    {
+        hitScoreText.text = hitScore.ToString("0");
     }
 }
