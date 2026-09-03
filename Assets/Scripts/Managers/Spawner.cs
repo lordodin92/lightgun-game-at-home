@@ -7,13 +7,15 @@ public class Spawner : MonoBehaviour
     public GameObject target;
     public GameObject gameManager;
 
-    GameManager manager;
+    public GameManager manager;
+    TargetScore score;
 
     public bool hasTargetSpawned;
 
     void Start()
     {
         manager = gameManager.GetComponent<GameManager>();
+        score = GetComponentInChildren<TargetScore>();
         hasTargetSpawned = false;
         target.SetActive(false);
     }
@@ -26,6 +28,7 @@ public class Spawner : MonoBehaviour
             {
                 target.SetActive(true);
                 hasTargetSpawned = true;
+                score.StartTimer();
             }
         }
     }

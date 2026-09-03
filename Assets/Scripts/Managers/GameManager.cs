@@ -6,8 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public float currentTimer;
     public float gameTimer;
+    public float overallScore;
+    public float hitScore;
 
-    public TMP_Text timerText;
+    //public TMP_Text timerText;
 
     void Start()
     {
@@ -18,7 +20,7 @@ public class GameManager : MonoBehaviour
     {
         timerValue = gameTimer;
         currentTimer = timerValue;
-        timerText.text = currentTimer.ToString("0");
+        //timerText.text = currentTimer.ToString("0");
         gameTimer = timerValue;
 
         while (currentTimer > 0)
@@ -26,5 +28,10 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1.0f);
             currentTimer--;
         }
+    }
+
+    public void ScoreCal()
+    {
+
     }
 }
