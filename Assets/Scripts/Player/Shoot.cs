@@ -10,6 +10,7 @@ public class Shoot : MonoBehaviour
     public float raycastRange;
 
     public string targetString;
+    public string nonTargetString;
 
     public TMP_Text maxAmmoText;
     public TMP_Text currentAmmoText;
@@ -40,7 +41,21 @@ public class Shoot : MonoBehaviour
 
             if (currentAmmo > 0 && !isReloading)
             {
-                currentAmmo--;
+                if (Physics.Raycast(ray, out hit))
+                {
+                    if (hit.collider.CompareTag(nonTargetString))
+                    {
+
+                    }
+                    else if (hit.collider.CompareTag(targetString))
+                    {
+                        currentAmmo--;
+                    }
+                }
+                else
+                {
+                    currentAmmo--;
+                }
             }
             else if (currentAmmo <= 0)
             {
@@ -50,14 +65,12 @@ public class Shoot : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 GameObject target = hit.collider.gameObject;
+
                 TargetDestroy destory = target.GetComponent<TargetDestroy>();
+
                 if (destory != null)
                 {
                     destory.GetScore();
-                }
-                else
-                {
-                    Debug.Log("NO TARGET");
                 }
             }
         }
