@@ -39,6 +39,7 @@ public class TargetScore : MonoBehaviour
     public void UpdateScore()
     {
         spawner.manager.overallScore += targetScore;
+        spawner.manager.UpdateScore();
     }
 
 }
