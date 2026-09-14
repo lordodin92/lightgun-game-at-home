@@ -9,6 +9,7 @@ TagManager:
   - Blocker Parent
   - Blocker Object
   - Border
+  - Bounds
   layers:
   - Default
   - TransparentFX
