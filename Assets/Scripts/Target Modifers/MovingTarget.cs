@@ -33,6 +33,5 @@ public class MovingTarget : MonoBehaviour
 
         targetPosition = points[destPoint].transform.position;
         destPoint = (destPoint + 1) % points.Length;
-        Debug.Log(destPoint);
     }
 }
