@@ -26,8 +26,14 @@ public class Shoot : MonoBehaviour
     public void Start()
     {
         playerCam = Camera.main;
-        currentAmmo = maxAmmo;
+
         manager = uimanager.GetComponent<UIManager>();
+
+        while (currentAmmo < maxAmmo)
+        {
+            manager.BulletEnable(currentAmmo);
+            currentAmmo++;
+        }
     }
 
     void Update()
