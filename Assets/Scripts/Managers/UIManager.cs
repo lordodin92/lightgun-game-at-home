@@ -16,4 +16,9 @@ public class UIManager : MonoBehaviour
     {
         _bullets[bullets].sprite = FilledBulletImage;
     }
+
+    public void BulletEnable(int bullets)
+    {
+        _bullets[bullets].gameObject.SetActive(true);
+    }
 }
