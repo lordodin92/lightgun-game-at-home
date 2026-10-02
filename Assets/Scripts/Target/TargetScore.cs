@@ -9,12 +9,16 @@ public class TargetScore : MonoBehaviour
     public float scoreDegradeTime;
     public float degradeDelay;
 
+    public GameObject goldenPointsObject;
+    GoldenPoints goldenPoints;
+
     Spawner spawner;
 
     void Start()
     {
         targetScore = maximumPoints;
         spawner = GetComponentInParent<Spawner>();
+        goldenPoints = goldenPointsObject.GetComponent<GoldenPoints>();
     }
 
     public void StartTimer()
@@ -38,6 +42,11 @@ public class TargetScore : MonoBehaviour
 
     public void UpdateScore()
     {
+        if (goldenPoints.isPowerUpActive)
+        {
+            targetScore *= 2f;
+        }
+
         spawner.manager.overallScore += targetScore;
         spawner.manager.UpdateScore();
     }
