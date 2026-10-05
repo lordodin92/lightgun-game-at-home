@@ -14,16 +14,26 @@ public class Shoot : MonoBehaviour
 
     public TMP_Text maxAmmoText;
     public TMP_Text currentAmmoText;
-    public float maxAmmo;
-    public float currentAmmo;
+    public int maxAmmo;
+    public int currentAmmo;
     public float reloadDelay;
 
     public bool isReloading;
 
+    public GameObject uimanager;
+    UIManager manager;
+
     public void Start()
     {
         playerCam = Camera.main;
-        currentAmmo = maxAmmo;
+
+        manager = uimanager.GetComponent<UIManager>();
+
+        while (currentAmmo < maxAmmo)
+        {
+            manager.BulletEnable(currentAmmo);
+            currentAmmo++;
+        }
     }
 
     void Update()
@@ -50,11 +60,13 @@ public class Shoot : MonoBehaviour
                     else if (hit.collider.CompareTag(targetString))
                     {
                         currentAmmo--;
+                        manager.BulletDecrease(currentAmmo);
                     }
                 }
                 else
                 {
                     currentAmmo--;
+                    manager.BulletDecrease(currentAmmo);
                 }
             }
             else if (currentAmmo <= 0)
@@ -85,7 +97,13 @@ public class Shoot : MonoBehaviour
     public IEnumerator ReloadDelay()
     {
         yield return new WaitForSeconds(reloadDelay);
-        currentAmmo = maxAmmo;
+
+        while(currentAmmo < maxAmmo)
+        {
+            manager.BulletIncrease(currentAmmo);
+            currentAmmo++;
+        }
+
         isReloading = false;
     }
 }
