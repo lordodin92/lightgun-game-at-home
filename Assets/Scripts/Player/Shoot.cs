@@ -21,13 +21,17 @@ public class Shoot : MonoBehaviour
     public bool isReloading;
 
     public GameObject uimanager;
+    public GameObject unlimitedBulletsButton;
     UIManager manager;
+    UnlimitedBullets unlimitedBullets;
 
     public void Start()
     {
         playerCam = Camera.main;
 
         manager = uimanager.GetComponent<UIManager>();
+
+        unlimitedBullets = unlimitedBulletsButton.GetComponent<UnlimitedBullets>();
 
         while (currentAmmo < maxAmmo)
         {
@@ -59,14 +63,20 @@ public class Shoot : MonoBehaviour
                     }
                     else if (hit.collider.CompareTag(targetString))
                     {
-                        currentAmmo--;
-                        manager.BulletDecrease(currentAmmo);
+                        if (!unlimitedBullets.isPowerUpActive)
+                        {
+                            currentAmmo--;
+                            manager.BulletDecrease(currentAmmo);
+                        }
                     }
                 }
                 else
                 {
-                    currentAmmo--;
-                    manager.BulletDecrease(currentAmmo);
+                    if (!unlimitedBullets.isPowerUpActive)
+                    {
+                        currentAmmo--;
+                        manager.BulletDecrease(currentAmmo);
+                    }
                 }
             }
             else if (currentAmmo <= 0)
