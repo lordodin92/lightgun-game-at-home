@@ -8,6 +8,7 @@ public class TargetScore : MonoBehaviour
     public float targetScore;
     public float scoreDegradeTime;
     public float degradeDelay;
+    public float decreasePoints;
 
     public GameObject goldenPointsObject;
     GoldenPoints goldenPoints;
@@ -48,6 +49,12 @@ public class TargetScore : MonoBehaviour
         }
 
         spawner.manager.overallScore += targetScore;
+        spawner.manager.UpdateScore();
+    }
+
+    public void DecreaseScore()
+    {
+        spawner.manager.overallScore -= decreasePoints;
         spawner.manager.UpdateScore();
     }
 

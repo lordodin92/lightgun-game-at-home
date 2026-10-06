@@ -1136,6 +1136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   currentTimer: 0
   gameTimer: 60
+  maxGameScore: 100
   overallScore: 0
   hitScore: 0
   timerText: {fileID: 212473181}
@@ -1609,6 +1610,7 @@ MonoBehaviour:
   targetScore: 10
   scoreDegradeTime: 1
   degradeDelay: 5
+  decreasePoints: 0
   goldenPointsObject: {fileID: 1932126756}
 --- !u!114 &788820163
 MonoBehaviour:
@@ -2483,6 +2485,7 @@ MonoBehaviour:
   raycastRange: 100
   targetString: Target Object
   nonTargetString: Border
+  blockerString: Blocker Object
   maxAmmoText: {fileID: 1707994938}
   currentAmmoText: {fileID: 179617318}
   maxAmmo: 6
@@ -3307,6 +3310,7 @@ MonoBehaviour:
   targetScore: 10
   scoreDegradeTime: 1
   degradeDelay: 5
+  decreasePoints: 5
   goldenPointsObject: {fileID: 1932126756}
 --- !u!65 &1514193555
 BoxCollider:
