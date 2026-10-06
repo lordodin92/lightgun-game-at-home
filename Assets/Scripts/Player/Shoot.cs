@@ -11,6 +11,7 @@ public class Shoot : MonoBehaviour
 
     public string targetString;
     public string nonTargetString;
+    public string blockerString;
 
     public TMP_Text maxAmmoText;
     public TMP_Text currentAmmoText;
@@ -69,6 +70,11 @@ public class Shoot : MonoBehaviour
                             manager.BulletDecrease(currentAmmo);
                         }
                     }
+                    else if (hit.collider.CompareTag(blockerString))
+                    {
+                        currentAmmo--;
+                        manager.BulletDecrease(currentAmmo);
+                    }
                 }
                 else
                 {
@@ -89,8 +95,13 @@ public class Shoot : MonoBehaviour
                 GameObject target = hit.collider.gameObject;
 
                 TargetDestroy destory = target.GetComponent<TargetDestroy>();
+                TargetScore score = target.GetComponent<TargetScore>();
 
-                if (destory != null)
+                if (hit.collider.CompareTag(blockerString) && score != null)
+                {
+                    score.DecreaseScore();
+                }
+                else if (destory != null)
                 {
                     destory.GetScore();
                 }

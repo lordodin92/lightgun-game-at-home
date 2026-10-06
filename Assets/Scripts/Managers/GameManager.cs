@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public float currentTimer;
     public float gameTimer;
+    public float maxGameScore;
     public float overallScore;
     public float hitScore;
 
@@ -34,6 +35,11 @@ public class GameManager : MonoBehaviour
 
     public void UpdateScore()
     {
+        if (overallScore < 0)
+        {
+            overallScore = 0;
+        }
+
         overallScoreText.text = overallScore.ToString("0");
     }
 
