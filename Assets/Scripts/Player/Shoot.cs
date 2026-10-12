@@ -23,8 +23,10 @@ public class Shoot : MonoBehaviour
 
     public GameObject uimanager;
     public GameObject unlimitedBulletsButton;
+    public GameObject blockerBusterButton;
     UIManager manager;
     UnlimitedBullets unlimitedBullets;
+    BlockerBuster blockerBuster;
 
     public void Start()
     {
@@ -33,6 +35,8 @@ public class Shoot : MonoBehaviour
         manager = uimanager.GetComponent<UIManager>();
 
         unlimitedBullets = unlimitedBulletsButton.GetComponent<UnlimitedBullets>();
+
+        blockerBuster = blockerBusterButton.GetComponent<BlockerBuster>();
 
         while (currentAmmo < maxAmmo)
         {
@@ -99,7 +103,15 @@ public class Shoot : MonoBehaviour
 
                 if (hit.collider.CompareTag(blockerString) && score != null)
                 {
-                    score.DecreaseScore();
+                    if (blockerBuster.isPowerUpActive)
+                    {
+                        score.BlockerScore();
+                        destory.destoryTarget();
+                    }
+                    else
+                    {
+                        score.DecreaseScore();
+                    }
                 }
                 else if (destory != null)
                 {
