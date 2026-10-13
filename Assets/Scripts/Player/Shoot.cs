@@ -18,15 +18,19 @@ public class Shoot : MonoBehaviour
     public int maxAmmo;
     public int currentAmmo;
     public float reloadDelay;
-
     public bool isReloading;
 
     public GameObject uimanager;
     public GameObject unlimitedBulletsButton;
     public GameObject blockerBusterButton;
+    public GameObject piercingButton;
     UIManager manager;
     UnlimitedBullets unlimitedBullets;
     BlockerBuster blockerBuster;
+    Piercing piercing;
+
+    public LayerMask IgnoreMask;
+    public LayerMask HitMask;
 
     public void Start()
     {
@@ -37,6 +41,8 @@ public class Shoot : MonoBehaviour
         unlimitedBullets = unlimitedBulletsButton.GetComponent<UnlimitedBullets>();
 
         blockerBuster = blockerBusterButton.GetComponent<BlockerBuster>();
+
+        piercing = piercingButton.GetComponent<Piercing>();
 
         while (currentAmmo < maxAmmo)
         {
@@ -94,7 +100,22 @@ public class Shoot : MonoBehaviour
                 Reload();
             }
 
-            if (Physics.Raycast(ray, out hit))
+            if (piercing.isPowerUpActive && Physics.Raycast(ray, out hit, Mathf.Infinity, ~IgnoreMask))
+            {
+                GameObject target = hit.collider.gameObject;
+
+                TargetDestroy destory = target.GetComponent<TargetDestroy>();
+
+                if (hit.collider.CompareTag(targetString))
+                {
+                    if (destory != null)
+                    {
+                        destory.GetScore();
+                    }
+                }
+
+            }
+            else if (Physics.Raycast(ray, out hit))
             {
                 GameObject target = hit.collider.gameObject;
 
