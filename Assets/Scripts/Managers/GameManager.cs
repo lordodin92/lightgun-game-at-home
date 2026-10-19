@@ -14,8 +14,17 @@ public class GameManager : MonoBehaviour
     public TMP_Text overallScoreText;
     public TMP_Text hitScoreText;
 
+    public float timeDelay;
+    public float normalSpeed;
+    public float slowSpeed;
+
+    SlowTime slowTime;
+    public GameObject slowTimeButton;
+
     void Start()
     {
+        slowTime = slowTimeButton.GetComponent<SlowTime>();
+        timeDelay = normalSpeed;
         StartCoroutine(StartTimer(gameTimer));
     }
 
@@ -27,7 +36,16 @@ public class GameManager : MonoBehaviour
 
         while (currentTimer > 0)
         {
-            yield return new WaitForSeconds(1.0f);
+            if (slowTime.isPowerUpActive)
+            {
+                timeDelay = slowSpeed;
+            }
+            else
+            {
+                timeDelay = normalSpeed;
+            }
+
+            yield return new WaitForSeconds(timeDelay);
             currentTimer--;
             timerText.text = currentTimer.ToString("0");
         }
