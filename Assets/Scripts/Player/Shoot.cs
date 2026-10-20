@@ -18,16 +18,20 @@ public class Shoot : MonoBehaviour
     public int maxAmmo;
     public int currentAmmo;
     public float reloadDelay;
+    public float normalReloadDelay;
+    public float slowSpeed;
     public bool isReloading;
 
     public GameObject uimanager;
     public GameObject unlimitedBulletsButton;
     public GameObject blockerBusterButton;
     public GameObject piercingButton;
+    public GameObject slowTimeButton;
     UIManager manager;
     UnlimitedBullets unlimitedBullets;
     BlockerBuster blockerBuster;
     Piercing piercing;
+    SlowTime slowTime;
 
     public LayerMask IgnoreMask;
     public LayerMask HitMask;
@@ -43,6 +47,10 @@ public class Shoot : MonoBehaviour
         blockerBuster = blockerBusterButton.GetComponent<BlockerBuster>();
 
         piercing = piercingButton.GetComponent<Piercing>();
+
+        slowTime = slowTimeButton.GetComponent<SlowTime>();
+
+        reloadDelay = normalReloadDelay;
 
         while (currentAmmo < maxAmmo)
         {
@@ -144,6 +152,15 @@ public class Shoot : MonoBehaviour
 
     public void Reload()
     {
+        if (slowTime.isPowerUpActive)
+        {
+            reloadDelay = slowSpeed;
+        }
+        else
+        {
+            reloadDelay = normalReloadDelay;
+        }
+
         isReloading = true;
         StartCoroutine(ReloadDelay());
     }

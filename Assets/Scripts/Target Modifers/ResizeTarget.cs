@@ -7,13 +7,24 @@ public class ResizeTarget : MonoBehaviour
     public Vector3 maxScale;
 
     public float speed;
+    public float normalSpeed;
+    public float slowSpeed;
     public float duration;
 
     private bool repeatable = true;
 
     public GameObject targetObject;
+    public GameObject slowTimeButton;
+    SlowTime slowTime;
 
-    IEnumerator Start ()
+    void Start()
+    {
+        slowTime = slowTimeButton.GetComponent<SlowTime>();
+
+        Rotation();
+    }
+
+    IEnumerator Rotation()
     {
         minScale = targetObject.transform.localScale;
         
@@ -26,6 +37,15 @@ public class ResizeTarget : MonoBehaviour
 
     public IEnumerator RepeatLerp(Vector3 a, Vector3 b, float time)
     {
+        if (slowTime.isPowerUpActive)
+        {
+            speed = slowSpeed;
+        }
+        else
+        {
+            speed = normalSpeed;
+        }
+
         float i = 0.0f;
         float rate = (1.0f / time) * speed;
         while (i < 1.0f)
