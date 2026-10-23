@@ -2987,6 +2987,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Movement
   points:
   - {fileID: 771827610}
+  - {fileID: 2092342908}
+  timeMilestones:
+  - 40
   player: {fileID: 1090449494}
   normalSpeed: 5
   normalRotationSpeed: 5
@@ -2994,6 +2997,7 @@ MonoBehaviour:
   slowRotationSpeed: 1
   delay: 0
   slowTimeButton: {fileID: 924374052}
+  gameManager: {fileID: 480294885}
 --- !u!1 &1223254025
 GameObject:
   m_ObjectHideFlags: 0
