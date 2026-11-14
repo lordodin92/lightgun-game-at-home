@@ -13,7 +13,6 @@ public class Movement : MonoBehaviour
     public float normalRotationSpeed;
     public float slowSpeed;
     public float slowRotationSpeed;
-    public float delay;
     private float currentTime;
 
     private Vector3 targetPosition;
