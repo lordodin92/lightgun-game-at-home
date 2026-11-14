@@ -19,7 +19,7 @@ public class Shoot : MonoBehaviour
     public int currentAmmo;
     public float reloadDelay;
     public float normalReloadDelay;
-    public float slowSpeed;
+    public float slowReloadDelay;
     public bool isReloading;
 
     public GameObject uimanager;
@@ -34,7 +34,6 @@ public class Shoot : MonoBehaviour
     SlowTime slowTime;
 
     public LayerMask IgnoreMask;
-    public LayerMask HitMask;
 
     public void Start()
     {
@@ -154,7 +153,7 @@ public class Shoot : MonoBehaviour
     {
         if (slowTime.isPowerUpActive)
         {
-            reloadDelay = slowSpeed;
+            reloadDelay = slowReloadDelay;
         }
         else
         {
