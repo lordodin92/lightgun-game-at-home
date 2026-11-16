@@ -1547,6 +1547,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 664190632198726427, guid: 85121c0338e3b8e43ab28fde57860054, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 17d64f9a585241b4b9697da08a459109, type: 3}
     - target: {fileID: 846737865233685954, guid: 85121c0338e3b8e43ab28fde57860054, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1571,6 +1575,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1964954921008274559, guid: 85121c0338e3b8e43ab28fde57860054, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 17d64f9a585241b4b9697da08a459109, type: 3}
     - target: {fileID: 2140334998179894644, guid: 85121c0338e3b8e43ab28fde57860054, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1723,6 +1731,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5275800584498246148, guid: 85121c0338e3b8e43ab28fde57860054, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 17d64f9a585241b4b9697da08a459109, type: 3}
     - target: {fileID: 5391231033320367002, guid: 85121c0338e3b8e43ab28fde57860054, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1799,6 +1811,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7591032265563811371, guid: 85121c0338e3b8e43ab28fde57860054, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 17d64f9a585241b4b9697da08a459109, type: 3}
+    - target: {fileID: 8045475270774939223, guid: 85121c0338e3b8e43ab28fde57860054, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 17d64f9a585241b4b9697da08a459109, type: 3}
     - target: {fileID: 8279030441121424959, guid: 85121c0338e3b8e43ab28fde57860054, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
