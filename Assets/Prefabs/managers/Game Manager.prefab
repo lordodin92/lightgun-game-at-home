@@ -45,5 +45,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   currentTimer: 0
-  gameTimer: 30
+  gameTimer: 60
+  maxGameScore: 0
+  overallScore: 0
+  hitScore: 0
   timerText: {fileID: 0}
+  overallScoreText: {fileID: 0}
+  hitScoreText: {fileID: 0}
+  timeDelay: 0
+  normalSpeed: 1
+  slowSpeed: 5
+  slowTimeButton: {fileID: 0}

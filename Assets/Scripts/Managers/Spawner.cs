@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         manager = gameManager.GetComponent<GameManager>();
-        score = GetComponentInChildren<TargetScore>();
+        score = target.GetComponent<TargetScore>();
         hasTargetSpawned = false;
         target.SetActive(false);
     }
