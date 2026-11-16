@@ -151,17 +151,21 @@ public class Shoot : MonoBehaviour
 
     public void Reload()
     {
-        if (slowTime.isPowerUpActive)
+       if(!isReloading)
         {
-            reloadDelay = slowReloadDelay;
-        }
-        else
-        {
-            reloadDelay = normalReloadDelay;
+            if (slowTime.isPowerUpActive)
+            {
+                reloadDelay = slowReloadDelay;
+            }
+            else
+            {
+                reloadDelay = normalReloadDelay;
+            }
+
+            isReloading = true;
+            StartCoroutine(ReloadDelay());
         }
 
-        isReloading = true;
-        StartCoroutine(ReloadDelay());
     }
 
     public IEnumerator ReloadDelay()
